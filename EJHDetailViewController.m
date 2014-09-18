@@ -12,6 +12,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) IBOutlet UIButton *button; 
+@property (strong, nonatomic) IBOutlet UIToolbar *barButton;
 
 @end
 
