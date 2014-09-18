@@ -8,6 +8,10 @@
 
 #import "EJHDetailViewController.h"
 
+static NSString * const entryKey = @"entry";
+static NSString * const titleKey =  @"title";
+static NSString * const textKey = @"text";
+
 @interface EJHDetailViewController () <UITextFieldDelegate, UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
@@ -33,7 +37,14 @@
     
 }
 - (IBAction)save:(id)sender {
-    
+    NSDictionary *entry = @{titleKey: self.textField.text, textKey: self.textView.text};
+    [[NSUserDefaults standardUserDefaults] setObject:entry forKey:entryKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)updateWithDictionary: (NSDictionary *)dictionary {
+    self.textField.text = dictionary[titleKey];
+    self.textView.text = dictionary[textKey];
 }
 
 - (void)viewDidLoad
@@ -42,6 +53,8 @@
     // Do any additional setup after loading the view from its nib.
     self.textField.delegate = self;
     self.textView.delegate = self;
+    NSDictionary *entry = [[NSUserDefaults standardUserDefaults] objectForKey:entryKey];
+    [self updateWithDictionary:entry];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,10 +67,12 @@
     return YES;
     
 }
+-(void)textViewDidChange:(UITextView *)textView {
+    [self save:textView];
+
+}
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self.textField resignFirstResponder];
-    [self save:textField];
-    
     return YES;
 }
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
