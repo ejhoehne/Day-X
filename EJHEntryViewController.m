@@ -8,6 +8,7 @@
 
 #import "EJHEntryViewController.h"
 
+
 @interface EJHEntryViewController () <UITableViewDelegate, UITextFieldDelegate>
 @property (nonatomic, strong) NSArray *entry;
 @property (strong, nonatomic) IBOutlet UITextField *textField;
@@ -21,8 +22,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.textView.delegate = self;
-    self.textField.title = self.entry.title;
-    self.notesView.notes = self.entry.notes;
+    self.textField.text = self.entry.title;
+    self.textView.text = self.entry.note;
 
     
 }
@@ -33,7 +34,6 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     //This makes the keyboard go away.
     [self.textField resignFirstResponder];
-    return YES;
 }
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField {
     [self.textField save: self.entry.title];
