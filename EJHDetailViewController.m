@@ -7,7 +7,6 @@
 //
 
 #import "EJHDetailViewController.h"
-
 static NSString * const entryKey = @"entry";
 static NSString * const titleKey =  @"title";
 static NSString * const textKey = @"text";

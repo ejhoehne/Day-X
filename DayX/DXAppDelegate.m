@@ -7,7 +7,7 @@
 //
 
 #import "DXAppDelegate.h"
-#import "EJHDetailViewController.h"
+#import "EJHListViewController.h"
 
 @implementation DXAppDelegate
 
@@ -16,7 +16,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    EJHDetailViewController *newController = [EJHDetailViewController new];
+    EJHListViewController *newController = [EJHListViewController new];
     UINavigationController *newNavigationController = [[UINavigationController alloc] initWithRootViewController:newController];
     self.window.rootViewController = newNavigationController;
     
