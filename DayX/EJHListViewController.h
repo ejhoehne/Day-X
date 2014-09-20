@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EJHListViewController : UIViewController
+@interface EJHListViewController : UIViewController <UITableViewDelegate>
 
 @end
