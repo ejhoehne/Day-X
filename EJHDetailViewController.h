@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface EJHDetailViewController : UIViewController
-
+-(void)updateWithDictionary:(NSDictionary *)dictionary; 
 @end

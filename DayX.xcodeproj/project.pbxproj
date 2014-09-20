@@ -19,6 +19,9 @@
 		711A508519388096005642EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A506D19388095005642EF /* UIKit.framework */; };
 		711A508D19388096005642EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 711A508B19388096005642EF /* InfoPlist.strings */; };
 		711A508F19388096005642EF /* DayXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A508E19388096005642EF /* DayXTests.m */; };
+		BA776E6E19CD32380092D7CD /* EJHListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6D19CD32380092D7CD /* EJHListViewController.m */; };
+		BA776E7119CD34820092D7CD /* EJHListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BA776E7019CD34820092D7CD /* EJHListTableViewDataSource.m */; };
+		BA776E7419CD34D40092D7CD /* ESEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA776E7319CD34D40092D7CD /* ESEntryController.m */; };
 		BAD9170119C920C600D7ACBF /* EJHDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD916FF19C920C600D7ACBF /* EJHDetailViewController.m */; };
 		BAD9170219C920C600D7ACBF /* EJHDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAD9170019C920C600D7ACBF /* EJHDetailViewController.xib */; };
 /* End PBXBuildFile section */
@@ -50,6 +53,12 @@
 		711A508A19388096005642EF /* DayXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DayXTests-Info.plist"; sourceTree = "<group>"; };
 		711A508C19388096005642EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		711A508E19388096005642EF /* DayXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DayXTests.m; sourceTree = "<group>"; };
+		BA776E6C19CD32380092D7CD /* EJHListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EJHListViewController.h; path = ../EJHListViewController.h; sourceTree = "<group>"; };
+		BA776E6D19CD32380092D7CD /* EJHListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EJHListViewController.m; path = ../EJHListViewController.m; sourceTree = "<group>"; };
+		BA776E6F19CD34820092D7CD /* EJHListTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EJHListTableViewDataSource.h; path = ../EJHListTableViewDataSource.h; sourceTree = "<group>"; };
+		BA776E7019CD34820092D7CD /* EJHListTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EJHListTableViewDataSource.m; path = ../EJHListTableViewDataSource.m; sourceTree = "<group>"; };
+		BA776E7219CD34D40092D7CD /* ESEntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESEntryController.h; path = ../../Entries/ESEntryController.h; sourceTree = "<group>"; };
+		BA776E7319CD34D40092D7CD /* ESEntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESEntryController.m; path = ../../Entries/ESEntryController.m; sourceTree = "<group>"; };
 		BAD916FE19C920C600D7ACBF /* EJHDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EJHDetailViewController.h; path = ../EJHDetailViewController.h; sourceTree = "<group>"; };
 		BAD916FF19C920C600D7ACBF /* EJHDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EJHDetailViewController.m; path = ../EJHDetailViewController.m; sourceTree = "<group>"; };
 		BAD9170019C920C600D7ACBF /* EJHDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EJHDetailViewController.xib; path = ../EJHDetailViewController.xib; sourceTree = "<group>"; };
@@ -123,6 +132,12 @@
 		711A507019388095005642EF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BA776E7219CD34D40092D7CD /* ESEntryController.h */,
+				BA776E7319CD34D40092D7CD /* ESEntryController.m */,
+				BA776E6F19CD34820092D7CD /* EJHListTableViewDataSource.h */,
+				BA776E7019CD34820092D7CD /* EJHListTableViewDataSource.m */,
+				BA776E6C19CD32380092D7CD /* EJHListViewController.h */,
+				BA776E6D19CD32380092D7CD /* EJHListViewController.m */,
 				BAD916FE19C920C600D7ACBF /* EJHDetailViewController.h */,
 				BAD916FF19C920C600D7ACBF /* EJHDetailViewController.m */,
 				BAD9170019C920C600D7ACBF /* EJHDetailViewController.xib */,
@@ -249,9 +264,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA776E6E19CD32380092D7CD /* EJHListViewController.m in Sources */,
 				BAD9170119C920C600D7ACBF /* EJHDetailViewController.m in Sources */,
 				711A507A19388095005642EF /* DXAppDelegate.m in Sources */,
 				711A507619388095005642EF /* main.m in Sources */,
+				BA776E7419CD34D40092D7CD /* ESEntryController.m in Sources */,
+				BA776E7119CD34820092D7CD /* EJHListTableViewDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

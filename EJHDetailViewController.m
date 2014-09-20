@@ -7,12 +7,14 @@
 //
 
 #import "EJHDetailViewController.h"
+#import "ESEntryController.h"
 
 static NSString * const entryKey = @"entry";
 static NSString * const titleKey =  @"title";
 static NSString * const textKey = @"text";
 
 @interface EJHDetailViewController () <UITextFieldDelegate, UITextViewDelegate>
+@property (nonatomic, strong) NSDictionary *dictionary;
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) IBOutlet UIButton *button; 
@@ -38,11 +40,21 @@ static NSString * const textKey = @"text";
 }
 - (IBAction)save:(id)sender {
     NSDictionary *entry = @{titleKey: self.textField.text, textKey: self.textView.text};
+    
+    if (self.dictionary) {
+        [[ESEntryController sharedInstance] replaceEntry:self.dictionary withEntry:entry];
+    }else {
+        [[ESEntryController sharedInstance] addEntry:entry];
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
     [[NSUserDefaults standardUserDefaults] setObject:entry forKey:entryKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)updateWithDictionary: (NSDictionary *)dictionary {
+    self.dictionary = dictionary;
     self.textField.text = dictionary[titleKey];
     self.textView.text = dictionary[textKey];
 }
@@ -55,6 +67,8 @@ static NSString * const textKey = @"text";
     self.textView.delegate = self;
     NSDictionary *entry = [[NSUserDefaults standardUserDefaults] objectForKey:entryKey];
     [self updateWithDictionary:entry];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
+    self.navigationItem.rightBarButtonItem = saveButton;
 }
 
 - (void)didReceiveMemoryWarning
